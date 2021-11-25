@@ -6,7 +6,9 @@ import com.mj.mvvmpatternframe.data.network.PokemonApiService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class DefaultPokemonRepository @Inject constructor(
     private val pokemonApi: PokemonApiService,
     private val ioDispatcher: CoroutineDispatcher,

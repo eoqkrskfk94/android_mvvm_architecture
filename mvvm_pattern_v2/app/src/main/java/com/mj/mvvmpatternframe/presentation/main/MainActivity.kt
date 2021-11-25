@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.vm = viewModel
 
         //observe ui
-        viewModel.countText.observe(this, Observer {
+        viewModel.countText.observe(this, {
             binding.textviewNumber.text = it
         })
 

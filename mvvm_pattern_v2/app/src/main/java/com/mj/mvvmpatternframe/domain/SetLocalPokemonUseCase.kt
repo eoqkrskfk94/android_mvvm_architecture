@@ -9,7 +9,7 @@ class SetLocalPokemonUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(pokemonEntity: PokemonEntity) {
-        //pokemonRepository.insertPokemonEntity(pokemonEntity)
+        pokemonRepository.insertPokemonEntity(pokemonEntity)
     }
 
 }

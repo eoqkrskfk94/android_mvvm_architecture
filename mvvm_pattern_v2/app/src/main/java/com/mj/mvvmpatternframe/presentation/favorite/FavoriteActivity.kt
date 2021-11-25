@@ -2,19 +2,22 @@ package com.mj.mvvmpatternframe.presentation.favorite
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.mj.mvvmpatternframe.databinding.ActivityFavoriteBinding
 import com.mj.mvvmpatternframe.presentation.adapter.ListAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
+@AndroidEntryPoint
 class FavoriteActivity : AppCompatActivity() {
 
     private var _binding: ActivityFavoriteBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: FavoriteViewModel
+    private val viewModel: FavoriteViewModel by viewModels()
     private lateinit var adapter: ListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +25,7 @@ class FavoriteActivity : AppCompatActivity() {
         _binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //viewModel initiate
-        viewModel  = getViewModel()
         binding.vm = viewModel
-
-
         initView()
     }
 

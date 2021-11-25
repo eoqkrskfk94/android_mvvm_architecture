@@ -7,9 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.mj.mvvmpatternframe.data.entity.PokemonEntity
 import com.mj.mvvmpatternframe.domain.DeleteLocalPokemonUseCase
 import com.mj.mvvmpatternframe.domain.GetLocalPokemonListUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class FavoriteViewModel(
+@HiltViewModel
+class FavoriteViewModel @Inject constructor(
     private val getLocalPokemonListUseCase: GetLocalPokemonListUseCase,
     private val deleteLocalPokemonUseCase: DeleteLocalPokemonUseCase
 ): ViewModel() {

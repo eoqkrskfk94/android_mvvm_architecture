@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.mj.mvvmpatternframe.data.entity.PokemonEntity
+import com.mj.mvvmpatternframe.data.repository.DefaultPokemonRepository
 import com.mj.mvvmpatternframe.data.repository.PagingRepository
 import com.mj.mvvmpatternframe.domain.GetPokemonListUseCase
 import com.mj.mvvmpatternframe.domain.SetLocalPokemonListUseCase
@@ -18,8 +19,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListViewModel @Inject constructor(
-    //private val setLocalPokemonListUseCase: SetLocalPokemonListUseCase,
-    //private val setLocalPokemonUseCase: SetLocalPokemonUseCase,
+    private val setLocalPokemonListUseCase: SetLocalPokemonListUseCase,
+    private val setLocalPokemonUseCase: SetLocalPokemonUseCase,
     private val pagingRepository: PagingRepository
 ) : ViewModel() {
 
@@ -28,11 +29,11 @@ class ListViewModel @Inject constructor(
         return pagingRepository.getPagingData().cachedIn(viewModelScope)
     }
 
-//    fun setLocalPokemonList(pokemonList: List<PokemonEntity>) = viewModelScope.launch {
-//        setLocalPokemonListUseCase(pokemonList)
-//    }
-//
-//    fun addFavoritePokemon(pokemonEntity: PokemonEntity) = viewModelScope.launch {
-//        setLocalPokemonUseCase(pokemonEntity)
-//    }
+    fun setLocalPokemonList(pokemonList: List<PokemonEntity>) = viewModelScope.launch {
+        setLocalPokemonListUseCase(pokemonList)
+    }
+
+    fun addFavoritePokemon(pokemonEntity: PokemonEntity) = viewModelScope.launch {
+        setLocalPokemonUseCase(pokemonEntity)
+    }
 }

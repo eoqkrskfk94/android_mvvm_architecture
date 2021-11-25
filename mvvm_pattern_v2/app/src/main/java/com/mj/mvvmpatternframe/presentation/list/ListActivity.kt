@@ -45,7 +45,7 @@ class ListActivity : AppCompatActivity() {
 
         adapter = PagingAdapter() { pokemonEntity ->
             Toast.makeText(this, "${pokemonEntity.name} added to favorite", Toast.LENGTH_SHORT).show()
-            //viewModel.addFavoritePokemon(pokemonEntity)
+            viewModel.addFavoritePokemon(pokemonEntity)
             pokemonEntity.favorite = true
         }
 
