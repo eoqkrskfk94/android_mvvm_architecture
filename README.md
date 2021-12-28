@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/37679062/137748663-18a4f2dc-2142-48df-b030-99f7dd5ed035.png)
+![image](https://user-images.githubusercontent.com/37679062/143455448-6a06f016-e0fd-4e82-9878-3209b479319f.png)
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-MIT%20License-blue"/></a>
   <a href="https://android-arsenal.com/api?level=26"><img alt="API" src="https://img.shields.io/badge/API-26%2B-brightgreen.svg?style=flat"/></a>
@@ -119,9 +119,13 @@ Paging3 helps load and display pages of data from a larger dataset from local st
 
 paging3 needs `PagingRepository`, `PagingSource`, and `PagingAdapter`
 
-<br/>
+<br/><br/><br/><br/><br/>
+# [v2.0] MVVM Architecture template using DI Hilt
+
+Used Hilt instead of Koin for Dependancy Injection
 
 
+<br/><br/><br/>
 # License
 ```xml
 MIT License
